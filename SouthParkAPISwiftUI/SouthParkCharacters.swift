@@ -9,7 +9,15 @@ import SwiftUI
 
 struct SouthParkCharacters: View {
     var body: some View {
-        Text("South Park Characters!")
+       
+        List {
+            Link("Kyle", destination: URL(string: "https://hotmail.com")!)
+            Text("Cartman")
+            Text("Kenny")
+            Text("Butters")
+        }
+        .listStyle(.sidebar)
+       
     }
 }
 

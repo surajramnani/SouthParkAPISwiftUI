@@ -14,44 +14,40 @@ struct ContentView: View {
     }
     var body: some View {
         
-        
-        ZStack {
-            VStack {
-                
-                TabView(selection:$selection){
+            ZStack {
+                TabView(selection: $selection) {
+                    NavigationView {
+                        SouthParkCharacters()
+                            .navigationTitle("Characters")
+                    }
+                    .tabItem {
+                        Label("Characters", systemImage: "figure.wave")
+                        Text("Characters")
+                    }
                     
-                    SouthParkCharacters()
-                        .tabItem{
-                            Label("Characters", systemImage: "figure.wave")
-                            Text("Characters")
-                            
-                        }
+                    NavigationView {
+                        SouthParkEpisodes()
+                            .navigationTitle("Episodes")
+                    }
+                    .tabItem {
+                        Label("Episodes", systemImage: "tv")
+                        Text("Episodes")
+                    }
+                    .tag(2)
                     
-                    
-                    
-                    SouthParkEpisodes()
-                        .tabItem{
-                            Label("Episodes", systemImage: "tv")
-                            Text("Episodes")
-                            Text("Tab 2")
-                        }
-                        .tag(2)
-                    SouthParkOther()
-                        .tabItem{
-                            Label("Families", systemImage: "figure.2.and.child.holdinghands")
-                            Text("Families")
-                        }
-                    
+                    NavigationView {
+                        SouthParkOther()
+                            .navigationTitle("Families")
+                    }
+                    .tabItem {
+                        Label("Families", systemImage: "figure.2.and.child.holdinghands")
+                        Text("Families")
+                    }
                 }
-                
-                
+                .accentColor(.red)
             }
-            .accentColor(.red)
         }
-        
     }
-    
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
