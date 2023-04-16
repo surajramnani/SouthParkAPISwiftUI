@@ -10,6 +10,9 @@ import SwiftUI
 
 
 struct ContentView: View {
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.lightGray
+     }
     var body: some View {
         
         ZStack {
@@ -43,7 +46,7 @@ struct ContentView: View {
                 
                 
             }
-            .accentColor(.blue)
+            .accentColor(.red)
         }
 
     }
