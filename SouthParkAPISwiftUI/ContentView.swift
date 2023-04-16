@@ -9,11 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        TabView {
+
+            SouthParkCharacters()
+                .tabItem{
+                    Label("Characters", systemImage: "figure.wave")
+                    Text("Characters")
+                }
+            SouthParkEpisodes()
+                .tabItem{
+                    Label("Episodes", systemImage: "tv")
+                    Text("Episodes")
+                }
+            SouthParkOther()
+                .tabItem{
+                    Label("Families", systemImage: "figure.2.and.child.holdinghands")
+                    Text("Families")
+                }
+            
         }
         .padding()
     }
