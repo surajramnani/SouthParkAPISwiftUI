@@ -7,21 +7,19 @@
 
 import SwiftUI
 
-
-
 struct ContentView: View {
+    @State private var selection = 2
     init() {
         UITabBar.appearance().backgroundColor = UIColor.lightGray
-     }
+    }
     var body: some View {
         
-        ZStack {
-         
         
+        ZStack {
             VStack {
                 
-                TabView {
-
+                TabView(selection:$selection){
+                    
                     SouthParkCharacters()
                         .tabItem{
                             Label("Characters", systemImage: "figure.wave")
@@ -29,28 +27,30 @@ struct ContentView: View {
                             
                         }
                     
-                        
+                    
                     
                     SouthParkEpisodes()
                         .tabItem{
                             Label("Episodes", systemImage: "tv")
                             Text("Episodes")
+                            Text("Tab 2")
                         }
+                        .tag(2)
                     SouthParkOther()
                         .tabItem{
                             Label("Families", systemImage: "figure.2.and.child.holdinghands")
                             Text("Families")
                         }
-                        
+                    
                 }
                 
                 
             }
             .accentColor(.red)
         }
-
-    }
         
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
