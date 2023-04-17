@@ -9,13 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 2
-    
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.lightGray
-    }
+           UITabBar.appearance().backgroundColor = UIColor.black
+           UITabBar.appearance().unselectedItemTintColor = UIColor.white // optional: set the unselected item color
+           UITabBar.appearance().tintColor = UIColor.blue // set the accent color
+       }
+  
     var body: some View {
         
             ZStack {
+                
+            
+                
                 TabView(selection: $selection) {
                     NavigationView {
                         SouthParkCharacters()
@@ -45,7 +50,6 @@ struct ContentView: View {
                         Text("Families")
                     }
                 }
-                .accentColor(.red)
             }
         }
     }

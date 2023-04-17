@@ -9,7 +9,12 @@ import SwiftUI
 
 struct SouthParkEpisodes: View {
     var body: some View {
+        ZStack
+        {
+            Color.green.ignoresSafeArea()
+     
         Text("South Park Episodes")
+        }
     }
 }
 
