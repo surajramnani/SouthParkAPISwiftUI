@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 2
+    
     init() {
         UITabBar.appearance().backgroundColor = UIColor.lightGray
     }
@@ -24,7 +25,7 @@ struct ContentView: View {
                         Label("Characters", systemImage: "figure.wave")
                         Text("Characters")
                     }
-                    
+                    .tag(2)
                     NavigationView {
                         SouthParkEpisodes()
                             .navigationTitle("Episodes")
@@ -33,7 +34,7 @@ struct ContentView: View {
                         Label("Episodes", systemImage: "tv")
                         Text("Episodes")
                     }
-                    .tag(2)
+                    
                     
                     NavigationView {
                         SouthParkOther()
