@@ -6,15 +6,32 @@
 //
 
 import SwiftUI
-
-struct SouthParkAPI: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class PostManager: ObservableObject {
+    
+    @Published var posts = [data]()
+    func fetchData() {
+        if  let url = URL(string: "https://spapi.dev/api/characters")
+        {
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { data, response, error in
+                if error == nil {
+                    let decoder = JSONDecoder()
+                    if let safeData = data {
+                        do {
+                            let results = try decoder.decode(SouthParkAPI.self, from: safeData)
+                            DispatchQueue.main.async {
+                                self.posts = results.data
+                            }
+                            
+                        }
+                        catch {
+                            print(error)
+                        }
+                    }
+                }
+            }
+            task.resume()
+        }
     }
-}
-
-struct SouthParkAPI_Previews: PreviewProvider {
-    static var previews: some View {
-        SouthParkAPI()
-    }
+    
 }
