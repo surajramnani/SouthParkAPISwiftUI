@@ -14,17 +14,16 @@ struct ContentView: View {
            UITabBar.appearance().unselectedItemTintColor = UIColor.white // optional: set the unselected item color
            UITabBar.appearance().tintColor = UIColor.blue // set the accent color
        }
-  
+    @ObservedObject var SouthParkAPI = PostManager()
     var body: some View {
         
             ZStack {
-                
-            
                 
                 TabView(selection: $selection) {
                     NavigationView {
                         SouthParkCharacters()
                             .navigationTitle("Characters")
+                        
                     }
                     .tabItem {
                         Label("Characters", systemImage: "figure.wave")

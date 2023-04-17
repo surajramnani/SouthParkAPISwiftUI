@@ -22,6 +22,7 @@ class PostManager: ObservableObject {
                             DispatchQueue.main.async {
                                 self.posts = results.data
                             }
+                            print(results)
                             
                         }
                         catch {
