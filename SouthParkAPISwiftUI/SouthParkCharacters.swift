@@ -30,6 +30,7 @@ struct SouthParkCharacters: View {
                         Color.blue.frame(width: 180, height: 180)
                         Color.blue.frame(width: 180, height: 180)
                     }
+                    Divider()
                     GridRow {
                         GridRow{
                             Color.blue.frame(width: 180, height: 180)
