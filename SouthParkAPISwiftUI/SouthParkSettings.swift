@@ -47,7 +47,7 @@ struct SouthParkSettings: View {
                     .padding(8)
                     .background(Color.blue)
                 
-                NavigationLink("Privacy Policy", destination:  WebView(url: URL(string: "https://www.google.com/")!))
+                NavigationLink("Terms of Service", destination:  WebView(url: URL(string: "https://www.google.com/")!))
                     
                     
                 }

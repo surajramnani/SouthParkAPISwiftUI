@@ -26,13 +26,15 @@ struct SouthParkCharacters: View {
                     }
                 }
                 
-                // Wrap List inside a VStack
-                List(post.posts) { post in
-                    Text(post.name)
-                }
-                .listStyle(.plain)
                 
-            }
+                    List(post.posts) { post in
+                        NavigationLink(post.name, destination: SouthParkLinks())
+                        
+                    }
+                    .listStyle(.plain)
+                    
+                }
+            
             .onAppear {
                 post.fetchData(endpoint: "characters")
             }

@@ -16,23 +16,25 @@ struct SouthParkOther: View {
             VStack {
                 Image("southparkepisodes")
                     .resizable()
-                .dynamicTypeSize(.xxxLarge)
-                .scaledToFit()
-                .clipShape(Circle()) // Apply a circular clip shape
-                .overlay(Circle().stroke(Color.blue, lineWidth: 8))
+                    .dynamicTypeSize(.xxxLarge)
+                    .scaledToFit()
+                    .clipShape(Circle()) // Apply a circular clip shape
+                    .overlay(Circle().stroke(Color.blue, lineWidth: 8))
+                
+                List {
+                    ForEach(post.posts) { post in
+                        Text(post.name)
+                    }
                    
-                List(post.posts) { post in
-                    Text(post.name)
                 }
                 .listStyle(.plain)
             }
-        }
-        .onAppear {
-            post.fetchData(endpoint: "families")
+            .onAppear {
+                post.fetchData(endpoint: "families")
+            }
         }
     }
 }
-
 
 struct SouthParkOther_Previews: PreviewProvider {
     static var previews: some View {

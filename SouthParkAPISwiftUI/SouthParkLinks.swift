@@ -10,7 +10,6 @@ import WebKit
 
 struct SouthParkLinks: View {
     var body: some View {
-        NavigationView {
             VStack {
                 
                 List{
@@ -49,7 +48,7 @@ struct SouthParkLinks: View {
         }
         
     }
-}
+
 struct WebView: UIViewRepresentable {
     let url: URL
     
