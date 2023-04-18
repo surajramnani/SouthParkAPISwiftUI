@@ -10,9 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @State private var selection = 2
     init() {
-           UITabBar.appearance().backgroundColor = UIColor.black
-           UITabBar.appearance().unselectedItemTintColor = UIColor.white // optional: set the unselected item color
-           UITabBar.appearance().tintColor = UIColor.blue // set the accent color
+           UITabBar.appearance().backgroundColor = UIColor.white
+           UITabBar.appearance().unselectedItemTintColor = UIColor.gray // optional: set the unselected item color
+           UITabBar.appearance().tintColor = UIColor.black // set the accent color
        }
     @ObservedObject var SouthParkAPI = PostManager()
     var body: some View {
@@ -47,6 +47,14 @@ struct ContentView: View {
                     .tabItem {
                         Label("Families", systemImage: "figure.2.and.child.holdinghands")
                         Text("Families")
+                    }
+                    NavigationView {
+                        SouthParkOther()
+                            .navigationTitle("Links")
+                    }
+                    .tabItem {
+                        Label("Links", systemImage: "globe")
+                 
                     }
                     NavigationView {
                         settings()
