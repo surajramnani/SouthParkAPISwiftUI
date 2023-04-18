@@ -11,6 +11,7 @@ struct SouthParkCharacters: View {
     @ObservedObject var post = PostManager()
     
     var body: some View {
+
         ZStack {
             Color.white.ignoresSafeArea()
             
@@ -28,13 +29,10 @@ struct SouthParkCharacters: View {
                 
                 
                 List(post.posts) { post in
-                    NavigationLink(
-                        destination: post.name == "Eric Cartman" ? AnyView(CartmanView()) : AnyView(Text("Page not found")),
+                    NavigationLink(post.name, destination: DetailView(url: "https://southpark.fandom.com/wiki/Gerald_Broflovski"))
+                          
                         
-                        label: {
-                            Text(post.name)
-                        }
-                    )
+                    
                 }
                 .listStyle(.plain)
                 

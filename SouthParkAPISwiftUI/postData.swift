@@ -18,6 +18,12 @@ struct data: Decodable, Identifiable
     let id: Int?
     let name: String
     let religion: String?
+    let wiki_url: String?
     let url: String?
+    
 }
 
+struct customStruct
+{
+    let customURL: String
+}

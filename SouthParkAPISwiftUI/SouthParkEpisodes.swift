@@ -20,8 +20,8 @@ struct SouthParkEpisodes: View {
                 .clipShape(Circle()) // Apply a circular clip shape
                 .overlay(Circle().stroke(Color.blue, lineWidth: 8))
                    
-                List(post.posts) { post in
-                    Text(post.name)
+                List(post.posts) {post in
+                    NavigationLink(post.name, destination: DetailView(url: post.wiki_url))
                 }
                 .listStyle(.plain)
             }
