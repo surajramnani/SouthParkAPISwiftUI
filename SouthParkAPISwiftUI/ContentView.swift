@@ -48,6 +48,14 @@ struct ContentView: View {
                         Label("Families", systemImage: "figure.2.and.child.holdinghands")
                         Text("Families")
                     }
+                    NavigationView {
+                        settings()
+                            .navigationTitle("Settings")
+                    }
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                        Text("Settings")
+                    }
                 }
             }
         }
