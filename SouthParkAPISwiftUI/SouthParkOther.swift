@@ -14,7 +14,7 @@ struct SouthParkOther: View {
         ZStack
         {
             VStack {
-                Image("southparktv")
+                Image("southparkepisodes")
                     .resizable()
                 .dynamicTypeSize(.xxxLarge)
                 .scaledToFit()

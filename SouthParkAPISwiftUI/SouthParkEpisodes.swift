@@ -13,9 +13,12 @@ struct SouthParkEpisodes: View {
         ZStack
         {
             VStack {
-                Image(systemName: "tv.circle")
+                Image("southparktv")
                     .resizable()
-                    .scaledToFit()
+                .dynamicTypeSize(.xxxLarge)
+                .scaledToFit()
+                .clipShape(Circle()) // Apply a circular clip shape
+                .overlay(Circle().stroke(Color.blue, lineWidth: 8))
                    
                 List(post.posts) { post in
                     Text(post.name)
