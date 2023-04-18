@@ -38,18 +38,30 @@ struct SouthParkLinks: View {
                 }
                 footer: {
                     Text("A few of my favorite videos from SouthPark")
-                        
+                    
                 }
-               
+                    Section {
+                        NavigationLink("Official Site", destination:  WebView(url: URL(string: "https://www.southparkstudios.com/")!))
+                        NavigationLink("South Park funny moments", destination:  WebView(url: URL(string: "https://www.youtube.com/watch?v=lqvUuMpU554&ab_channel=LethalLev")!))
+                        
+                        
+                    }
+                header: {
+                    Text("South Park Video Links")
+                    
+                }
+                footer: {
+                    Text("A few of my favorite videos from SouthPark")
+                    
+                }
+                    
                 }
                 
             }
-           
         }
+        
     }
-    
 }
-
 struct SouthParkLinks_Previews: PreviewProvider {
     static var previews: some View {
         SouthParkLinks()
