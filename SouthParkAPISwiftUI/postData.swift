@@ -18,5 +18,6 @@ struct data: Decodable, Identifiable
     let id: Int?
     let name: String
     let religion: String?
+    let url: String
 }
 
