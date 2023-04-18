@@ -9,6 +9,12 @@ import SwiftUI
 
 struct SouthParkCharacters: View {
     @ObservedObject var post = PostManager()
+    let links = [
+        ["name": "Gerald Broflovski", "url": "https://southpark.fandom.com/wiki/Gerald_Broflovski"],
+        ["name": "Eric Cartman", "url": "https://southpark.fandom.com/wiki/Eric_Cartman"],
+        ["name": "Kyle Broflovski", "url": "https://southpark.fandom.com/wiki/Kyle_Broflovski"]
+        // add more links as needed
+    ]
     
     var body: some View {
 
@@ -29,7 +35,11 @@ struct SouthParkCharacters: View {
                 
                 
                 List(post.posts) { post in
-                    NavigationLink(post.name, destination: DetailView(url: "https://southpark.fandom.com/wiki/Gerald_Broflovski"))
+                    ForEach(links, id: \.self) { link in
+                        NavigationLink(link["name"]!, destination: DetailView(url: link["url"]!))
+                    }
+                }
+
                           
                         
                     
@@ -47,21 +57,7 @@ struct SouthParkCharacters: View {
         }
     }
     
-}
-    
 
-
-
-    
-        
-
-
-
-      
-        
-        
-        
-    
 
 
     struct SouthParkCharacters_Previews: PreviewProvider {
