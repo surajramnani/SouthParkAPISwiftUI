@@ -7,55 +7,50 @@
 
 import SwiftUI
 
-
 struct SouthParkCharacters: View {
+    @ObservedObject var post = PostManager()
     
     var body: some View {
-        
         ZStack {
-            Color.green.ignoresSafeArea()
+            Color.white.ignoresSafeArea()
             
             VStack {
-                HStack {
-                    VStack {
-                        Grid(horizontalSpacing: 2, verticalSpacing: 2) {
-                            GridRow{
-                                Image( "EricCartman")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .clipShape(Circle()) // Apply a circular clip shape
-                                           .overlay(Circle().stroke(Color.white, lineWidth: 4)) // Add a white border
-                                   
-                                Image(systemName: "cloud.bolt")
-                                    .resizable()
-                                    .scaledToFit()
-                                    
-                                
-                                   
-                            }
-                                GridRow{
-                                    Color.blue.frame(width: 180, height: 180)
-                                    Color.blue.frame(width: 180, height: 180)
-                                }
-                                GridRow{
-                                    Color.blue.frame(width: 180, height: 180)
-                                    Color.blue.frame(width: 180, height: 180)
-                                    
-                                }
-                                
-                            }
-                        .navigationTitle("Characters")
-                        Image(systemName: "globe")
+                Grid(horizontalSpacing: 2, verticalSpacing: 2) {
+                    GridRow{
+                        Image("South Park")
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(Circle()) // Apply a circular clip shape
+                            .overlay(Circle().stroke(Color.white, lineWidth: 4)) // Add a white border
                     }
-                }
+                    
+                    VStack { // Wrap List inside a VStack
+                        List(post.posts) { post in
+                            Text(post.name)
+                        }
+                        .listStyle(.plain)
+                        
+                    }
+                    // Set background color of VStack
                 }
             }
-            
-            
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         
-        
+        .onAppear {
+            post.fetchData(endpoint: "characters")
+        }
+        .navigationTitle("Characters")
     }
+}
+
+
+
+      
+        
+        
+        
+    
 
 
     struct SouthParkCharacters_Previews: PreviewProvider {

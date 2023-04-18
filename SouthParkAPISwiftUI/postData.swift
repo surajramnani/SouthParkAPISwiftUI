@@ -15,8 +15,8 @@ struct SouthParkAPI: Decodable
 struct data: Decodable, Identifiable
 {
 
-    let id: String
+    let id: Int?
     let name: String
-    let religion: String
+    let religion: String?
 }
 

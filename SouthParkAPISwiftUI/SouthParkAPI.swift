@@ -8,10 +8,17 @@
 import SwiftUI
 class PostManager: ObservableObject {
     
+    
+    
     @Published var posts = [data]()
-    func fetchData() {
-        if  let url = URL(string: "https://spapi.dev/api/characters")
+    
+    func fetchCharacters() {
+        
+    }
+    func fetchData(endpoint: String) {
+        if  let url = URL(string: "https://spapi.dev/api/\(endpoint)")
         {
+            
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
                 if error == nil {
