@@ -19,30 +19,38 @@ struct SouthParkCharacters: View {
                     GridRow{
                         Image("South Park")
                             .resizable()
-                            .fixedSize()
+                            .dynamicTypeSize(.xxxLarge)
+                            .scaledToFit()
                             .clipShape(Circle()) // Apply a circular clip shape
-                            .overlay(Circle().stroke(Color.white, lineWidth: 4)) // Add a white border
+                            .overlay(Circle().stroke(Color.blue, lineWidth: 8)) // Add a white border
                     }
-                    
-                    VStack { // Wrap List inside a VStack
-                        List(post.posts) { post in
-                            Text(post.name)
-                        }
-                        .listStyle(.plain)
-                        
-                    }
-                    // Set background color of VStack
                 }
+                
+                // Wrap List inside a VStack
+                List(post.posts) { post in
+                    Text(post.name)
+                }
+                .listStyle(.plain)
+                
             }
+            .onAppear {
+                post.fetchData(endpoint: "characters")
+            }
+            .navigationTitle("Characters")
+            // Set background color of VStack
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         
-        .onAppear {
-            post.fetchData(endpoint: "characters")
-        }
-        .navigationTitle("Characters")
+        
     }
 }
+
+      
+    
+
+
+
+    
+        
 
 
 
