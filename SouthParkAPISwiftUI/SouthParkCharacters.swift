@@ -27,26 +27,29 @@ struct SouthParkCharacters: View {
                 }
                 
                 
-                    List(post.posts) { post in
-                        NavigationLink(post.name, destination: SouthParkLinks())
+                List(post.posts) { post in
+                    NavigationLink(
+                        destination: post.name == "Eric Cartman" ? AnyView(CartmanView()) : AnyView(Text("Page not found")),
                         
-                    }
-                    .listStyle(.plain)
-                    
+                        label: {
+                            Text(post.name)
+                        }
+                    )
                 }
-            
-            .onAppear {
-                post.fetchData(endpoint: "characters")
+                .listStyle(.plain)
+                
+                .onAppear {
+                    post.fetchData(endpoint: "characters")
+                }
+                .navigationTitle("Characters")
+                // Set background color of VStack
             }
-            .navigationTitle("Characters")
-            // Set background color of VStack
+            
+            
         }
-        
-        
     }
+    
 }
-
-      
     
 
 
