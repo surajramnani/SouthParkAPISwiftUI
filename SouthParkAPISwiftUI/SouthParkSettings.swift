@@ -10,14 +10,27 @@ import SwiftUI
 struct SouthParkSettings: View {
     var body: some View {
         
-        List{
-            Section {
-                NavigationLink("Official Site", destination:  WebView(url: URL(string: "https://www.southparkstudios.com/")!))
-                NavigationLink("South Park Official Youtube Channel", destination:  WebView(url: URL(string: "https://www.youtube.com/channel/UC7R27sAWc_DqOldtI1JcYhQ")!))
-                NavigationLink("South Park Official Merchandise", destination:  WebView(url: URL(string: "https://www.redwolf.in/south-park-merchandise-india")!))
+        List {
+            HStack {
+                Image(systemName: "paperplane")
                 
-            }}}}
+                    .renderingMode(.template)
+                    .foregroundColor(Color.white)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(Color.red)
+                    .padding(8)
+                    .background(Color.blue)
+                
+                NavigationLink("Privacy Policy", destination:  WebView(url: URL(string: "https://www.google.com/")!))
+                Section{
+                    
+                    
+                }}
+        }
+    }
     
+}
 
 struct SouthParkSettings_Previews: PreviewProvider {
     static var previews: some View {
