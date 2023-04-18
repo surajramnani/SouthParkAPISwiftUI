@@ -12,6 +12,7 @@ class PostManager: ObservableObject {
     
     @Published var posts = [data]()
     
+    
     func fetchCharacters() {
         
     }
@@ -28,6 +29,7 @@ class PostManager: ObservableObject {
                             let results = try decoder.decode(SouthParkAPI.self, from: safeData)
                             DispatchQueue.main.async {
                                 self.posts = results.data
+                                
                             }
                          
                             

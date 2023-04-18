@@ -9,15 +9,21 @@ import SwiftUI
 
 struct SouthParkCharacters: View {
     @ObservedObject var post = PostManager()
-    let links = [
-        ["name": "Gerald Broflovski", "url": "https://southpark.fandom.com/wiki/Gerald_Broflovski"],
-        ["name": "Eric Cartman", "url": "https://southpark.fandom.com/wiki/Eric_Cartman"],
-        ["name": "Kyle Broflovski", "url": "https://southpark.fandom.com/wiki/Kyle_Broflovski"]
-        // add more links as needed
+    let characterLinks = [
+        "Gerald Broflovski": "https://southpark.fandom.com/wiki/Gerald_Broflovski",
+        "Eric Cartman": "https://southpark.fandom.com/wiki/Eric_Cartman",
+        "Kyle Broflovski": "https://southpark.fandom.com/wiki/Kyle_Broflovski",
+        "Ike Broflovski": "https://southpark.fandom.com/wiki/Ike_Broflovski",
+        "Kyle's Elephant": "https://southpark.fandom.com/wiki/Kyle%27s_Elephant",
+        "Cleo Broflovski": "https://southpark.fandom.com/wiki/Cleo_Broflovski",
+        "Murrey Broflovski": "https://southpark.fandom.com/wiki/Murrey_Broflovski",
+        "Kyle Schwartz": "https://southpark.fandom.com/wiki/Kyle_Schwartz",
+        "Future Kyle's Kids": "https://southpark.fandom.com/wiki/Future_Kyle%27s_Kids",
+        "Liane Cartman": "https://southpark.fandom.com/wiki/Liane_Cartman"
     ]
-    
-    var body: some View {
 
+    var body: some View {
+        
         ZStack {
             Color.white.ignoresSafeArea()
             
@@ -34,28 +40,34 @@ struct SouthParkCharacters: View {
                 }
                 
                 
-                List(post.posts) { post in
-                    ForEach(links, id: \.self) { link in
-                        NavigationLink(link["name"]!, destination: DetailView(url: link["url"]!))
-                    }
-                }
-
-                          
-                        
-                    
-                }
-                .listStyle(.plain)
+                List(post.posts, id: \.id) { post in
+                                   ForEach(characterLinks.keys.sorted(), id: \.self) { name in // Use sorted keys to display the characters alphabetically
+                                       if name == post.name, let url = characterLinks[name] {
+                                           NavigationLink(name, destination: DetailView(url: url))
+                                       }
+                                   }
+                               }
+                           }
                 
-                .onAppear {
-                    post.fetchData(endpoint: "characters")
-                }
-                .navigationTitle("Characters")
-                // Set background color of VStack
+                
+                
+                
+                
+                
+                
             }
+            .listStyle(.plain)
             
-            
+            .onAppear {
+                post.fetchData(endpoint: "characters")
+            }
+            .navigationTitle("Characters")
+            // Set background color of VStack
         }
+        
+        
     }
+
     
 
 

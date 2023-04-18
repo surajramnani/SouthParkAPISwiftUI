@@ -14,6 +14,8 @@
 		4421869829EC59A200A24ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4421869729EC59A200A24ABB /* Assets.xcassets */; };
 		4421869B29EC59A200A24ABB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4421869A29EC59A200A24ABB /* Preview Assets.xcassets */; };
 		44290A5A29EF066600D17F7A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44290A5929EF066600D17F7A /* DetailView.swift */; };
+		44290A5E29EF3A2300D17F7A /* GeraldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44290A5D29EF3A2300D17F7A /* GeraldView.swift */; };
+		44290A6029EF3B7B00D17F7A /* KyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44290A5F29EF3B7B00D17F7A /* KyleView.swift */; };
 		445FE43429ED1CAF0063B7A3 /* SouthParkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445FE43329ED1CAF0063B7A3 /* SouthParkAPI.swift */; };
 		4466633429EC6F2A00BB1CF5 /* SouthParkCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466633329EC6F2A00BB1CF5 /* SouthParkCharacters.swift */; };
 		4466633629EC719700BB1CF5 /* SouthParkEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466633529EC719700BB1CF5 /* SouthParkEpisodes.swift */; };
@@ -30,6 +32,8 @@
 		4421869729EC59A200A24ABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4421869A29EC59A200A24ABB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		44290A5929EF066600D17F7A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		44290A5D29EF3A2300D17F7A /* GeraldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeraldView.swift; sourceTree = "<group>"; };
+		44290A5F29EF3B7B00D17F7A /* KyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KyleView.swift; sourceTree = "<group>"; };
 		445FE43329ED1CAF0063B7A3 /* SouthParkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SouthParkAPI.swift; sourceTree = "<group>"; };
 		4466633329EC6F2A00BB1CF5 /* SouthParkCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SouthParkCharacters.swift; sourceTree = "<group>"; };
 		4466633529EC719700BB1CF5 /* SouthParkEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SouthParkEpisodes.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				4421869329EC59A000A24ABB /* SouthParkAPISwiftUIApp.swift */,
+				44290A5D29EF3A2300D17F7A /* GeraldView.swift */,
+				44290A5F29EF3B7B00D17F7A /* KyleView.swift */,
 				4421869529EC59A000A24ABB /* ContentView.swift */,
 				44290A5929EF066600D17F7A /* DetailView.swift */,
 				4466633329EC6F2A00BB1CF5 /* SouthParkCharacters.swift */,
@@ -162,10 +168,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				445FE43429ED1CAF0063B7A3 /* SouthParkAPI.swift in Sources */,
+				44290A6029EF3B7B00D17F7A /* KyleView.swift in Sources */,
 				4421869629EC59A000A24ABB /* ContentView.swift in Sources */,
 				440BA3AA29EE86F1004F973F /* SouthParkLinks.swift in Sources */,
 				440BA3AC29EE871B004F973F /* SouthParkSettings.swift in Sources */,
 				4421869429EC59A000A24ABB /* SouthParkAPISwiftUIApp.swift in Sources */,
+				44290A5E29EF3A2300D17F7A /* GeraldView.swift in Sources */,
 				44290A5A29EF066600D17F7A /* DetailView.swift in Sources */,
 				4466633429EC6F2A00BB1CF5 /* SouthParkCharacters.swift in Sources */,
 				4466633629EC719700BB1CF5 /* SouthParkEpisodes.swift in Sources */,
