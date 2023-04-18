@@ -49,7 +49,7 @@ struct ContentView: View {
                         Text("Families")
                     }
                     NavigationView {
-                        SouthParkOther()
+                        SouthParkLinks()
                             .navigationTitle("Links")
                     }
                     .tabItem {
@@ -57,7 +57,7 @@ struct ContentView: View {
                  
                     }
                     NavigationView {
-                        settings()
+                        SouthParkSettings()
                             .navigationTitle("Settings")
                     }
                     .tabItem {
