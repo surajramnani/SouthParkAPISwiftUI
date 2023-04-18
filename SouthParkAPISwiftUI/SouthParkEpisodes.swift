@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct SouthParkEpisodes: View {
+    @ObservedObject var post = PostManager()
     var body: some View {
         ZStack
         {
             Color.green.ignoresSafeArea()
-     
-        Text("South Park Episodes")
+            HStack {
+                List(post.posts) { post in
+                    Text(post.name)
+                }
+            }
+        }
+        .onAppear {
+            post.fetchData(endpoint: "episodes")
         }
     }
 }
