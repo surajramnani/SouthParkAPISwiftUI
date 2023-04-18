@@ -19,7 +19,7 @@ struct SouthParkCharacters: View {
                     GridRow{
                         Image("South Park")
                             .resizable()
-                            .scaledToFit()
+                            .fixedSize()
                             .clipShape(Circle()) // Apply a circular clip shape
                             .overlay(Circle().stroke(Color.white, lineWidth: 4)) // Add a white border
                     }
