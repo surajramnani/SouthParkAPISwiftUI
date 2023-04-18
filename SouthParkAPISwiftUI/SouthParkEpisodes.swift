@@ -12,11 +12,15 @@ struct SouthParkEpisodes: View {
     var body: some View {
         ZStack
         {
-            Color.green.ignoresSafeArea()
-            HStack {
+            VStack {
+                Image(systemName: "tv.circle")
+                    .resizable()
+                    .scaledToFit()
+                   
                 List(post.posts) { post in
                     Text(post.name)
                 }
+                .listStyle(.plain)
             }
         }
         .onAppear {
